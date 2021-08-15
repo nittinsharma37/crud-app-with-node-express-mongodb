@@ -1,8 +1,14 @@
+const axios =require("axios");
 
 
 exports.homRoute = (req,res) =>{
-    res.render("index");
-    res.end();
+   // make a get request to api 
+   axios.get("http://localhost:2000/api/users").then(response => {
+    //    console.log(response.data);
+       res.render("index", {users: response.data});
+   }).catch(err => {
+       res.send(err);
+   });
 };
 
 
@@ -14,7 +20,10 @@ exports.adduser = (req,res) =>{
 
 exports.updateuser = (req,res) =>{
      
-    res.render("updateuser");
-    res.end();
+    axios.get("http://localhost:2000/api/users", {params: {id: req.query.id}}).then(function(userData) {
+        res.render("updateuser", {user: userData.data});
+    }).catch(err => {
+        res.send(err); 
+    });
  
 };
