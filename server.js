@@ -35,6 +35,20 @@ app.get('/' , (req , res)=>{
 
 });
 
+app.get('/add-user' , (req , res)=>{
+
+    res.render("adduser");
+    res.end();
+ 
+ });
+
+ app.get('/update-user' , (req , res)=>{
+
+    res.render("updateuser");
+    res.end();
+ 
+ });
+
 app.listen(PORT, () => {
     console.log("Server listening on port : " + PORT);
 });

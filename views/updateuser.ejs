@@ -1,29 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud App in express/node/mongodb</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
+<!-- include head -->
+<%- include("include/_head") %>
+<!-- /include head -->
 
 <body>
-    <!-- header -->
-    <header id="header">
-        <nav>
-            <div class="container">
-                <div class="text-center">
-                    <a href="/" class="nav-brand -text-dark">User Management system</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- header -->
+    <!-- include header -->
+    <%- include("include/_header") %>
+    <!-- /include header -->
 
     <!-- Main site -->
     <main id="site-main">
@@ -35,8 +17,8 @@
                 </div>
             </div>
             <div class="form-title text-center">
-                <h2 class="text-dark">New User</h2>
-                <span class="text-light">Use the below form to create new account. </span>
+                <h2 class="text-dark">Update User</h2>
+                <span class="text-light">Use the below form to update an account. </span>
             </div>
             <!-- form handling  -->
             <form method="POST" id="update_user">
@@ -84,7 +66,6 @@
         </div>
     </main>
     <!-- /Main site -->
-
 </body>
 
 </html>
