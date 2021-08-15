@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require("morgan");
 const bodyparser = require("body-parser");
 const path = require("path");
+const router = require("./server/routes/router")
 
 const app = express();
 
@@ -27,27 +28,10 @@ app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 app.use("/img", express.static(path.resolve(__dirname, "assets/img")));
 
+// load router
 
-app.get('/' , (req , res)=>{
+app.use("/", router);
 
-   res.render("index");
-   res.end();
-
-});
-
-app.get('/add-user' , (req , res)=>{
-
-    res.render("adduser");
-    res.end();
- 
- });
-
- app.get('/update-user' , (req , res)=>{
-
-    res.render("updateuser");
-    res.end();
- 
- });
 
 app.listen(PORT, () => {
     console.log("Server listening on port : " + PORT);
